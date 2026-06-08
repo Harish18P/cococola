@@ -18,7 +18,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--black);
@@ -59,6 +59,7 @@
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(244,0,9,0.15);
+    gap: 12px;
   }
   .nav-logo {
     font-family: 'Playfair Display', serif;
@@ -66,6 +67,7 @@
     font-size: 1.5rem;
     color: var(--red);
     letter-spacing: -0.02em;
+    flex-shrink: 0;
   }
   .nav-links {
     display: flex; gap: 8px; list-style: none;
@@ -94,6 +96,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: 600;
+    flex-shrink: 0;
   }
 
   section { min-height: 100vh; position: relative; overflow: hidden; }
@@ -122,30 +125,35 @@
     font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--gold); margin-bottom: 28px; font-weight: 600;
     opacity: 0; animation: fadeUp 1s 0.3s forwards;
+    position: relative; z-index: 1;
   }
   .hero-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(5rem, 14vw, 14rem);
     line-height: 0.88; letter-spacing: -0.01em; color: var(--white);
-    opacity: 0; animation: fadeUp 1s 0.5s forwards; position: relative;
+    opacity: 0; animation: fadeUp 1s 0.5s forwards; position: relative; z-index: 1;
   }
   .hero-title span { color: var(--red); }
   .hero-subtitle {
     font-family: 'Playfair Display', serif; font-style: italic;
     font-size: clamp(1.1rem, 2.5vw, 1.8rem); color: rgba(255,255,255,0.6);
     margin-top: 20px; opacity: 0; animation: fadeUp 1s 0.7s forwards; max-width: 700px;
+    position: relative; z-index: 1;
   }
   .hero-divider {
     width: 60px; height: 2px; background: var(--red); margin: 32px auto;
     opacity: 0; animation: fadeUp 1s 0.9s forwards;
+    position: relative; z-index: 1;
   }
   .hero-desc {
     max-width: 660px; line-height: 1.8; font-size: 0.95rem;
     color: rgba(255,255,255,0.55); opacity: 0; animation: fadeUp 1s 1.1s forwards;
+    position: relative; z-index: 1; padding: 0 8px;
   }
   .hero-meta {
     display: flex; gap: 40px; margin-top: 48px;
     opacity: 0; animation: fadeUp 1s 1.3s forwards; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1;
   }
   .hero-meta-item { text-align: center; }
   .hero-meta-item .num { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; color: var(--red); line-height: 1; }
@@ -155,6 +163,7 @@
     font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid);
     display: flex; flex-direction: column; align-items: center; gap: 8px;
     opacity: 0; animation: fadeUp 1s 1.6s forwards;
+    z-index: 1;
   }
   .scroll-line {
     width: 1px; height: 40px;
@@ -167,6 +176,7 @@
     border-radius: 8px; overflow: hidden;
     opacity: 0; animation: fadeUp 1s 1.5s forwards;
     box-shadow: 0 24px 80px rgba(244,0,9,0.2);
+    position: relative; z-index: 1;
   }
   .hero-strip-block {
     flex: 1; height: 140px; display: flex; align-items: center; justify-content: center;
@@ -235,11 +245,6 @@
   }
   .logo-sys-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--black); padding: 14px 16px 6px; font-weight: 700; }
   .logo-sys-card p { font-size: 0.78rem; line-height: 1.65; color: #666; padding: 0 16px 18px; }
-
-  @media (max-width: 768px) {
-    .typo-panel { grid-template-columns: 1fr; }
-    .logo-system-grid { grid-template-columns: 1fr 1fr; }
-  }
 
   /* ====== CHAPTER 01 — LOGO ====== */
   #logo { background: var(--cream); color: var(--black); padding: 100px 60px 80px; }
@@ -357,10 +362,10 @@
   .subsection-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); margin-bottom: 14px; font-style: italic; }
   .subsection-body { font-size: 0.9rem; line-height: 1.85; color: rgba(255,255,255,0.55); }
 
-  /* Bottle timeline — horizontal scroll strip */
   .bottle-timeline {
     display: flex; gap: 20px; margin-top: 56px; overflow-x: auto; padding-bottom: 16px;
     scrollbar-width: thin; scrollbar-color: var(--red) #111;
+    -webkit-overflow-scrolling: touch;
   }
   .bottle-item { min-width: 150px; text-align: center; flex-shrink: 0; }
   .bottle-item .bottle-img {
@@ -374,7 +379,6 @@
   .bottle-item .b-year { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--red); margin-top: 10px; }
   .bottle-item .b-name { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.05em; margin-top: 2px; }
 
-  /* CSS bottle silhouettes as fallback */
   .css-bottle {
     display: flex; align-items: center; justify-content: center;
     font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; color: rgba(244,0,9,0.7);
@@ -398,7 +402,6 @@
     width: 34px;
   }
 
-  /* Bottle deep-dive panels */
   .bottle-deepdive { margin-top: 56px; display: flex; flex-direction: column; gap: 16px; }
   .bdd-section {
     display: grid; grid-template-columns: 340px 1fr; min-height: 260px;
@@ -428,14 +431,6 @@
   .wave-showcase-body::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.2); }
   .wave-showcase-body h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: white; letter-spacing: 0.05em; }
   .wave-showcase-body p { color: rgba(255,255,255,0.82); font-size: 0.92rem; line-height: 1.85; max-width: 700px; margin-top: 12px; }
-
-  @media (max-width: 768px) {
-    .bdd-section, .bdd-reverse { grid-template-columns: 1fr; }
-    .bdd-reverse .bdd-img-wrap { order: 0; }
-    .bdd-reverse .bdd-content { order: 1; }
-    .bdd-img-wrap { min-height: 180px; }
-    .bdd-specs { grid-template-columns: 1fr; }
-  }
 
   /* ====== CHAPTER 05 — PSYCHOLOGY ====== */
   #psychology { background: var(--red); padding: 100px 60px 80px; position: relative; overflow: hidden; }
@@ -484,89 +479,204 @@
   ::-webkit-scrollbar-track { background: var(--black); }
   ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
 
-  @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    #logo, #colour, #packaging, #psychology { padding: 80px 24px 60px; }
-    .colour-grid, .two-col, .psych-grid { grid-template-columns: 1fr; }
-    .hero-meta { gap: 20px; }
-    .timeline::before { left: 60px; }
-    .timeline-year { width: 60px; min-width: 60px; font-size: 1.4rem; }
-    .timeline-thumb { display: none; }
-    .santa-grid { grid-template-columns: 1fr 1fr; }
-    footer { padding: 40px 24px; }
-    .hero-img-strip { display: none; }
-    .colour-banner { height: 220px; }
-    .packaging-hero { height: 260px; }
+  /* ============================================
+     MOBILE RESPONSIVE — COMPREHENSIVE FIX
+     ============================================ */
+
+  @media (max-width: 1024px) {
+    .logo-system-grid { grid-template-columns: 1fr 1fr; }
+    .bdd-section { grid-template-columns: 280px 1fr; }
+    .bdd-reverse { grid-template-columns: 1fr 280px; }
+    .psych-grid { grid-template-columns: 1fr 1fr; }
   }
 
-/* ===== EXTRA MOBILE OPTIMIZATION PATCH ===== */
-@media (max-width: 768px) {
-    .cursor,
-    .cursor-trail {
-        display: none !important;
-    }
+  @media (max-width: 768px) {
+    /* Hide cursor on touch */
+    .cursor, .cursor-trail { display: none !important; }
+    body { cursor: auto !important; }
 
-    body {
-        cursor: auto !important;
-    }
+    /* Nav */
+    nav { padding: 14px 20px; gap: 8px; }
+    .nav-links { display: none; }
+    .nav-logo { font-size: 1.2rem; }
+    .nav-tag { font-size: 0.6rem; letter-spacing: 0.06em; }
 
-    .page-num {
-        font-size: 4rem !important;
-        top: 20px !important;
-        right: 15px !important;
-    }
+    /* Page number — smaller, no overflow */
+    .page-num { font-size: 4rem; top: 20px; right: 16px; }
 
+    /* Sections */
+    #hero { padding: 100px 24px 80px; }
+    #logo, #colour, #packaging, #psychology { padding: 80px 20px 60px; }
+
+    /* Hero label wrapping */
+    .hero-label { font-size: 0.62rem; letter-spacing: 0.15em; padding: 0 8px; }
+
+    /* Hero meta */
+    .hero-meta { gap: 16px; }
+    .hero-meta-item .num { font-size: 2.2rem; }
+    .hero-meta-item .lbl { font-size: 0.62rem; }
+
+    /* Hero strip hidden on mobile */
+    .hero-img-strip { display: none; }
+
+    /* Page header stacked */
+    .page-header { flex-direction: column; margin-bottom: 40px; gap: 0; }
+    .page-title { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+    .page-intro { font-size: 0.88rem; max-width: 100%; }
+
+    /* Timeline — fully mobile friendly */
+    .timeline::before { left: 52px; }
     .timeline-item {
-        flex-direction: column !important;
-        gap: 10px !important;
+      flex-direction: row;
+      gap: 0;
+      margin-bottom: 40px;
+      align-items: flex-start;
     }
-
+    .timeline-year {
+      width: 52px; min-width: 52px;
+      font-size: 1.1rem;
+      padding-right: 12px;
+      text-align: right;
+    }
+    .timeline-year::after {
+      right: -5px; top: 8px;
+      width: 8px; height: 8px;
+    }
     .timeline-content {
-        padding-left: 0 !important;
+      flex: 1;
+      padding-left: 18px;
     }
-}
+    .timeline-content h3 { font-size: 1.05rem; }
+    .timeline-content p { font-size: 0.84rem; }
+    /* Hide thumb images on mobile — they break layout */
+    .timeline-thumb { display: none; }
 
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 3.5rem !important;
-        line-height: 0.95 !important;
-    }
-
-    #logo,
-    #colour,
-    #packaging,
-    #psychology {
-        padding: 70px 16px 50px !important;
+    /* Typo panel */
+    .typo-panel {
+      grid-template-columns: 1fr;
+      padding: 28px 20px;
+      gap: 32px;
     }
 
-    .hero-meta {
-        gap: 12px !important;
+    /* Logo system grid */
+    .logo-system-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    .logo-sys-icon { height: 80px; }
+    .logo-sys-card h4 { font-size: 0.82rem; padding: 10px 12px 4px; }
+    .logo-sys-card p { font-size: 0.72rem; padding: 0 12px 14px; }
+
+    /* Subsec titles */
+    .subsec-title { font-size: 1.4rem; }
+    .subsec-intro { font-size: 0.84rem; }
+
+    /* Colour */
+    .colour-banner { height: 220px; }
+    .colour-banner-overlay { padding: 20px; }
+    .colour-banner-text { font-size: clamp(1.2rem, 4vw, 1.8rem); }
+    .colour-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* Big stat */
+    .big-stat { grid-template-columns: 1fr; }
+    .big-stat-item { padding: 24px 16px; }
+    .big-stat-item .n { font-size: 2.8rem; }
+
+    /* Callout */
+    .callout { padding: 20px 20px 20px 18px; }
+    .callout p { font-size: 0.86rem; }
+
+    /* Santa grid */
+    .santa-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .santa-grid .img-block { height: 160px; }
+
+    /* Packaging hero */
+    .packaging-hero { height: 260px; }
+    .packaging-hero-overlay { padding: 24px; }
+    .packaging-hero-text h3 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+    .packaging-hero-text p { font-size: 0.85rem; }
+
+    /* Two col → single */
+    .two-col { grid-template-columns: 1fr; gap: 32px; }
+    .subsection-title { font-size: 1.2rem; }
+    .subsection-body { font-size: 0.86rem; }
+
+    /* Bottle timeline — smaller cards */
+    .bottle-item { min-width: 120px; }
+    .bottle-item .bottle-img { height: 140px; padding: 8px; }
+    .bottle-item .b-year { font-size: 1.1rem; }
+    .bottle-item .b-name { font-size: 0.65rem; }
+
+    /* Bottle deep-dive — stack vertically */
+    .bdd-section,
+    .bdd-reverse {
+      grid-template-columns: 1fr;
     }
+    .bdd-reverse .bdd-img-wrap { order: 0; }
+    .bdd-reverse .bdd-content { order: 1; }
+    .bdd-img-wrap { min-height: 200px; }
+    .bdd-content { padding: 24px 20px; }
+    .bdd-content h4 { font-size: 1.1rem; }
+    .bdd-content p { font-size: 0.82rem; }
+    .bdd-specs { grid-template-columns: 1fr 1fr; gap: 6px; }
+    .bdd-spec { padding: 6px 10px; }
+    .bdd-spec-v { font-size: 0.75rem; }
 
-    .hero-meta-item .num {
-        font-size: 2rem !important;
-    }
+    /* Wave showcase */
+    .wave-showcase-img { height: 200px; }
+    .wave-showcase-body { padding: 24px 20px; }
+    .wave-showcase-body h3 { font-size: 1.6rem; }
+    .wave-showcase-body p { font-size: 0.86rem; }
 
-    .page-title {
-        font-size: 2rem !important;
-    }
+    /* Psychology */
+    .psych-grid { grid-template-columns: 1fr; gap: 16px; }
+    .psych-card { padding: 22px 18px; }
+    .psych-card .p-num { font-size: 2.8rem; }
+    .psych-card h3 { font-size: 0.95rem; }
+    .psych-card p { font-size: 0.82rem; }
+    .psych-quote blockquote { font-size: clamp(1.1rem, 4vw, 1.6rem); padding: 0 8px; }
 
-    .subsec-title {
-        font-size: 1.4rem !important;
-    }
+    /* Footer */
+    footer { padding: 40px 20px 36px; }
+    .footer-logo { font-size: 1.8rem; }
+    footer p { font-size: 0.78rem; }
+  }
 
-    .colour-banner,
-    .packaging-hero {
-        height: 200px !important;
-    }
-}
+  @media (max-width: 480px) {
+    #hero { padding: 90px 16px 70px; }
+    #logo, #colour, #packaging, #psychology { padding: 70px 16px 50px; }
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
+    .hero-title { font-size: clamp(3.5rem, 18vw, 5.5rem); line-height: 0.9; }
+    .hero-meta { gap: 12px; }
+    .hero-meta-item .num { font-size: 1.9rem; }
 
+    /* Hero label even smaller */
+    .hero-label { font-size: 0.58rem; letter-spacing: 0.1em; }
+
+    .page-num { font-size: 3rem; top: 16px; right: 12px; }
+
+    /* Timeline even tighter */
+    .timeline::before { left: 44px; }
+    .timeline-year { width: 44px; min-width: 44px; font-size: 0.95rem; padding-right: 10px; }
+    .timeline-content { padding-left: 14px; }
+    .timeline-content h3 { font-size: 0.95rem; }
+
+    /* Logo grid 1 col on very small screens */
+    .logo-system-grid { grid-template-columns: 1fr; gap: 12px; }
+    .logo-sys-icon { height: 100px; }
+
+    /* Santa grid — 1 col */
+    .santa-grid { grid-template-columns: 1fr; }
+    .santa-grid .img-block { height: 200px; }
+
+    /* Big stat – 1 col */
+    .big-stat { grid-template-columns: 1fr; }
+
+    .colour-grid { grid-template-columns: 1fr; }
+
+    .packaging-hero { height: 220px; }
+
+    .bdd-specs { grid-template-columns: 1fr; }
+
+    .footer-tags span { font-size: 0.62rem; padding: 4px 10px; }
+  }
 </style>
 </head>
 <body>
@@ -596,7 +706,7 @@ html, body {
   <p class="hero-subtitle">Exploring the legacy of design and perception</p>
   <div class="hero-divider"></div>
   <p class="hero-desc">
-    This is my personal submission for <strong>Theme 3: Brand Evolution &amp; Design</strong> of The Coca-Cola Mantra Challenge 2026. This work traces how a single brand — born at a Atlanta in 1886 — became the world's most recognised commercial identity through deliberate design, cultural storytelling, and visual consistency.
+    This is my personal submission for <strong>Theme 3: Brand Evolution &amp; Design</strong> of The Coca-Cola Mantra Challenge 2026. This work traces how a single brand — born at Atlanta in 1886 — became the world's most recognised commercial identity through deliberate design, cultural storytelling, and visual consistency.
   </p>
   <div class="hero-meta">
     <div class="hero-meta-item"><div class="num">140</div><div class="lbl">Years of History</div></div>
@@ -882,7 +992,6 @@ html, body {
     </div>
   </div>
 
-  <!-- Packaging hero -->
   <div class="packaging-hero reveal">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Cocacola-1961.jpg/800px-Cocacola-1961.jpg" alt="Classic Coca-Cola bottles" onerror="this.style.display='none'">
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a0a0a,#1a0505);display:none;align-items:center;justify-content:center;" id="pkg-hero-bg"></div>
@@ -905,7 +1014,6 @@ html, body {
     </div>
   </div>
 
-  <!-- Bottle timeline — properly closed div -->
   <div class="bottle-timeline reveal">
     <div class="bottle-item">
       <div class="bottle-img">
@@ -956,9 +1064,8 @@ html, body {
       <div class="b-year">Today</div>
       <div class="b-name">Modern Contour</div>
     </div>
-  </div><!-- END .bottle-timeline -->
+  </div>
 
-  <!-- Bottle deep-dive — now correctly outside bottle-timeline -->
   <div class="bottle-deepdive reveal">
     <div class="bdd-section">
       <div class="bdd-img-wrap">
@@ -1010,7 +1117,7 @@ html, body {
         </div>
       </div>
     </div>
-  </div><!-- END .bottle-deepdive -->
+  </div>
 
   <div class="wave-showcase reveal">
     <img class="wave-showcase-img" src="drd.jpeg" alt="Coca-Cola Dynamic Ribbon Device" onerror="this.className='wave-showcase-bg'">
@@ -1020,7 +1127,7 @@ html, body {
     </div>
   </div>
 
-</section><!-- END #packaging -->
+</section>
 
 <!-- ====== CHAPTER 05 — PSYCHOLOGY ====== -->
 <section id="psychology">
@@ -1098,29 +1205,39 @@ html, body {
 </footer>
 
 <script>
-  // Custom cursor
+  // Custom cursor — desktop only
   const cursor = document.getElementById('cursor');
   const trail = document.getElementById('cursorTrail');
-  let mx = 0, my = 0, tx = 0, ty = 0;
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = (mx - 6) + 'px';
-    cursor.style.top = (my - 6) + 'px';
-  });
-  function animTrail() {
-    tx += (mx - tx) * 0.12;
-    ty += (my - ty) * 0.12;
-    trail.style.left = (tx - 16) + 'px';
-    trail.style.top = (ty - 16) + 'px';
-    requestAnimationFrame(animTrail);
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+  if (!isTouchDevice) {
+    let mx = 0, my = 0, tx = 0, ty = 0;
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = (mx - 6) + 'px';
+      cursor.style.top = (my - 6) + 'px';
+    });
+    function animTrail() {
+      tx += (mx - tx) * 0.12;
+      ty += (my - ty) * 0.12;
+      trail.style.left = (tx - 16) + 'px';
+      trail.style.top = (ty - 16) + 'px';
+      requestAnimationFrame(animTrail);
+    }
+    animTrail();
+
+    const interactives = document.querySelectorAll('a, button, .colour-card, .psych-card, .bottle-item, .timeline-thumb, .bdd-section');
+    interactives.forEach(el => {
+      el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2)'; trail.style.transform = 'scale(1.5)'; });
+      el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; trail.style.transform = 'scale(1)'; });
+    });
   }
-  animTrail();
 
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal, .timeline-item');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => observer.observe(el));
 
   // Active nav link
@@ -1147,14 +1264,7 @@ html, body {
     document.querySelectorAll('.page-num').forEach(el => {
       el.style.transform = 'translateY(' + (sy * 0.04) + 'px)';
     });
-  });
-
-  // Cursor scale on interactive elements
-  const interactives = document.querySelectorAll('a, button, .colour-card, .psych-card, .bottle-item, .timeline-thumb, .bdd-section');
-  interactives.forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2)'; trail.style.transform = 'scale(1.5)'; });
-    el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; trail.style.transform = 'scale(1)'; });
-  });
+  }, { passive: true });
 </script>
 </body>
 </html>
