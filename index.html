@@ -536,16 +536,17 @@
     /* Timeline — fully mobile friendly */
     .timeline::before { left: 52px; }
     .timeline-item {
-      flex-direction: row;
+      flex-direction: column;
       gap: 0;
       margin-bottom: 40px;
-      align-items: flex-start;
+      align-items: stretch;
     }
     .timeline-year {
       width: 52px; min-width: 52px;
       font-size: 1.1rem;
       padding-right: 12px;
       text-align: right;
+      float: left;
     }
     .timeline-year::after {
       right: -5px; top: 8px;
@@ -553,12 +554,23 @@
     }
     .timeline-content {
       flex: 1;
-      padding-left: 18px;
+      padding-left: 70px;
+      margin-bottom: 12px;
     }
     .timeline-content h3 { font-size: 1.05rem; }
     .timeline-content p { font-size: 0.84rem; }
-    /* Hide thumb images on mobile — they break layout */
-    .timeline-thumb { display: none; }
+    /* Show thumbs below content on mobile */
+    .timeline-thumb {
+      display: block !important;
+      width: calc(100% - 52px);
+      height: 150px;
+      margin-left: 52px;
+      margin-top: 4px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .timeline-thumb img { width: 100%; height: 100%; object-fit: contain; border-radius: 6px; }
+    .thumb-red, .thumb-cream, .thumb-dark { width: 100%; height: 100%; border-radius: 6px; font-size: 1.4rem; }
 
     /* Typo panel */
     .typo-panel {
