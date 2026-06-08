@@ -499,6 +499,74 @@
     .colour-banner { height: 220px; }
     .packaging-hero { height: 260px; }
   }
+
+/* ===== EXTRA MOBILE OPTIMIZATION PATCH ===== */
+@media (max-width: 768px) {
+    .cursor,
+    .cursor-trail {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto !important;
+    }
+
+    .page-num {
+        font-size: 4rem !important;
+        top: 20px !important;
+        right: 15px !important;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .timeline-content {
+        padding-left: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 3.5rem !important;
+        line-height: 0.95 !important;
+    }
+
+    #logo,
+    #colour,
+    #packaging,
+    #psychology {
+        padding: 70px 16px 50px !important;
+    }
+
+    .hero-meta {
+        gap: 12px !important;
+    }
+
+    .hero-meta-item .num {
+        font-size: 2rem !important;
+    }
+
+    .page-title {
+        font-size: 2rem !important;
+    }
+
+    .subsec-title {
+        font-size: 1.4rem !important;
+    }
+
+    .colour-banner,
+    .packaging-hero {
+        height: 200px !important;
+    }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 </style>
 </head>
 <body>
