@@ -236,15 +236,24 @@
   }
   .logo-sys-card {
     background: white; border-radius: 8px; overflow: hidden; border: 1px solid #e8e8e8;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column;
   }
   .logo-sys-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
   .logo-sys-icon {
-    height: 110px; display: flex; align-items: center; justify-content: center;
-    border-radius: 8px 8px 0 0;
+    height: 120px; min-height: 120px; display: flex; align-items: center; justify-content: center;
+    border-radius: 8px 8px 0 0; flex-shrink: 0; position: relative; overflow: hidden;
+  }
+  .logo-sys-icon img {
+    max-width: 85%; max-height: 90px; width: auto; height: auto;
+    object-fit: contain; display: block; position: absolute; z-index: 2;
+  }
+  /* Fallback shown when image fails */
+  .logo-sys-icon .icon-fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    z-index: 0;
   }
   .logo-sys-card h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--black); padding: 14px 16px 6px; font-weight: 700; }
-  .logo-sys-card p { font-size: 0.78rem; line-height: 1.65; color: #666; padding: 0 16px 18px; }
+  .logo-sys-card p { font-size: 0.78rem; line-height: 1.65; color: #666; padding: 0 16px 18px; flex: 1; }
 
   /* ====== CHAPTER 01 — LOGO ====== */
   #logo { background: var(--cream); color: var(--black); padding: 100px 60px 80px; }
@@ -559,10 +568,11 @@
     }
 
     /* Logo system grid */
-    .logo-system-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-    .logo-sys-icon { height: 80px; }
-    .logo-sys-card h4 { font-size: 0.82rem; padding: 10px 12px 4px; }
-    .logo-sys-card p { font-size: 0.72rem; padding: 0 12px 14px; }
+    .logo-system-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .logo-sys-icon { height: 110px; min-height: 110px; }
+    .logo-sys-icon img { max-height: 80px; max-width: 85%; }
+    .logo-sys-card h4 { font-size: 0.9rem; padding: 12px 14px 5px; }
+    .logo-sys-card p { font-size: 0.75rem; padding: 0 14px 16px; line-height: 1.6; }
 
     /* Subsec titles */
     .subsec-title { font-size: 1.4rem; }
@@ -659,8 +669,9 @@
     .timeline-content h3 { font-size: 0.95rem; }
 
     /* Logo grid 1 col on very small screens */
-    .logo-system-grid { grid-template-columns: 1fr; gap: 12px; }
-    .logo-sys-icon { height: 100px; }
+    .logo-system-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .logo-sys-icon { height: 100px; min-height: 100px; }
+    .logo-sys-icon img { max-height: 70px; }
 
     /* Santa grid — 1 col */
     .santa-grid { grid-template-columns: 1fr; }
@@ -862,29 +873,55 @@
 
   <div class="logo-system-grid reveal">
     <div class="logo-sys-card">
-      <div class="logo-sys-icon" style="background:#FFFFFF;">
-        <img src="cwm.png" alt="Wordmark" style="max-width:80%;max-height:60px;object-fit:contain;">
+      <div class="logo-sys-icon" style="background:#F40009;">
+        <div class="icon-fallback">
+          <svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg" style="width:85%;height:70px;">
+            <text x="100" y="60" font-family="'Playfair Display',serif" font-style="italic" font-size="46" fill="white" text-anchor="middle" font-weight="700">Coca-Cola</text>
+          </svg>
+        </div>
+        <img src="cwm.png" alt="Wordmark" onerror="this.style.opacity='0'">
       </div>
       <h4>The Wordmark</h4>
       <p>The primary brand mark — Spencerian script in white on Coca-Cola Red. Used across all primary packaging, signage, and above-the-line advertising worldwide. Unchanged in substance since 1941.</p>
     </div>
     <div class="logo-sys-card">
-      <div class="logo-sys-icon" style="background:#FFFFFF;">
-        <img src="db.png" alt="Disc Button" style="max-width:100%;max-height:120px;object-fit:contain;">
+      <div class="logo-sys-icon" style="background:#F40009;">
+        <div class="icon-fallback" style="flex-direction:column;gap:4px;">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:90px;">
+            <circle cx="60" cy="60" r="58" fill="#F40009" stroke="white" stroke-width="3"/>
+            <rect x="0" y="46" width="120" height="22" fill="white" rx="0"/>
+            <text x="60" y="36" font-family="'Playfair Display',serif" font-style="italic" font-size="18" fill="white" text-anchor="middle" font-weight="700">Coca-Cola</text>
+            <text x="60" y="62" font-family="sans-serif" font-size="9" fill="#F40009" text-anchor="middle" letter-spacing="1" font-weight="700">TRADE MARK ®</text>
+            <text x="60" y="88" font-family="'Playfair Display',serif" font-style="italic" font-size="11" fill="white" text-anchor="middle">Since 1886</text>
+          </svg>
+        </div>
+        <img src="db.png" alt="Disc Button" onerror="this.style.opacity='0'">
       </div>
       <h4>The Disc / Button Mark</h4>
       <p>Introduced in the 1940s, the circular "button" mark places the script wordmark inside a red circle with a white border band. Widely used on bottle caps, point-of-sale materials, and signage. Immediately recognisable even at small sizes.</p>
     </div>
     <div class="logo-sys-card">
-      <div class="logo-sys-icon" style="background:#FFFFFF;">
-        <img src="cz.png" alt="Zero variant" style="max-width:100%;max-height:120px;object-fit:contain;">
+      <div class="logo-sys-icon" style="background:#0A0A0A;">
+        <div class="icon-fallback" style="flex-direction:column;gap:2px;">
+          <svg viewBox="0 0 200 90" xmlns="http://www.w3.org/2000/svg" style="width:90%;height:75px;">
+            <text x="100" y="52" font-family="'Playfair Display',serif" font-style="italic" font-size="42" fill="white" text-anchor="middle" font-weight="700">Coca-Cola</text>
+            <text x="100" y="74" font-family="sans-serif" font-size="11" fill="#888" text-anchor="middle" letter-spacing="4" font-weight="600">ZERO SUGAR</text>
+          </svg>
+        </div>
+        <img src="cz.png" alt="Zero variant" onerror="this.style.opacity='0'">
       </div>
       <h4>Coca-Cola Zero / Sub-brands</h4>
       <p>The wordmark adapts for sub-brands while maintaining the Spencerian DNA. Coca-Cola Zero Sugar uses the same script on a black background. Diet Coke uses a silver treatment. Each variation respects the parent mark's proportions.</p>
     </div>
     <div class="logo-sys-card">
       <div class="logo-sys-icon" style="background:#F40009;">
-        <img src="dr.png" alt="Dynamic Ribbon" style="max-width:100%;max-height:100px;object-fit:contain;">
+        <div class="icon-fallback">
+          <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" style="width:90%;height:80px;">
+            <text x="100" y="48" font-family="'Playfair Display',serif" font-style="italic" font-size="38" fill="white" text-anchor="middle" font-weight="700">Coca-Cola</text>
+            <path d="M10 72 Q100 55 190 72" fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <img src="dr.png" alt="Dynamic Ribbon" onerror="this.style.opacity='0'">
       </div>
       <h4>The Dynamic Ribbon Device</h4>
       <p>The white curved wave introduced in 1969, often called the "smile" or "Dynamic Ribbon." It functions as a standalone graphic element that can carry the brand identity even without the wordmark. Officially trademarked as a brand element.</p>
