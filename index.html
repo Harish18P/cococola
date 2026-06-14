@@ -700,6 +700,214 @@
 
     .footer-tags span { font-size: 0.62rem; padding: 4px 10px; }
   }
+
+  /* ====== REIMAGINE SECTION ====== */
+  #reimagine {
+    background: var(--black);
+    padding: 120px 40px 100px;
+    position: relative;
+  }
+  #reimagine .page-num { color: rgba(244,0,9,0.07); }
+
+  .reimagine-intro {
+    max-width: 780px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  .reimagine-intro .ri-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .reimagine-intro h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+  .reimagine-intro h2 em {
+    color: var(--red);
+    font-style: normal;
+  }
+  .reimagine-intro p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.6);
+  }
+  .reimagine-intro .ri-context {
+    margin-top: 20px;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.3);
+    font-family: 'DM Sans', sans-serif;
+    font-style: italic;
+  }
+
+  /* Campaign cards */
+  .campaign-list {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .campaign-card {
+    border-top: 1px solid rgba(244,0,9,0.15);
+    padding: 56px 0 56px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    align-items: start;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .campaign-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .campaign-card:last-child {
+    border-bottom: 1px solid rgba(244,0,9,0.15);
+  }
+  .campaign-meta {
+    padding-top: 4px;
+  }
+  .campaign-era {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2rem;
+    line-height: 1;
+    color: rgba(244,0,9,0.25);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .campaign-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .campaign-original {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    display: block;
+    line-height: 1.5;
+  }
+  .campaign-body {}
+  .campaign-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 6px;
+  }
+  .campaign-subline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--red);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .campaign-story {
+    font-size: 0.93rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+  }
+  .campaign-story strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+  }
+  .campaign-insight {
+    border-left: 2px solid var(--red);
+    padding: 14px 20px;
+    background: rgba(244,0,9,0.05);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .campaign-elements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .campaign-el {
+    font-size: 0.67rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 5px 11px;
+    border-radius: 2px;
+  }
+
+  /* Manifesto block */
+  .reimagine-manifesto {
+    max-width: 780px;
+    margin: 80px auto 0;
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid rgba(244,0,9,0.15);
+  }
+  .manifesto-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 28px;
+  }
+  .manifesto-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.8vw, 2rem);
+    line-height: 1.6;
+    color: var(--white);
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+  .manifesto-text em {
+    color: var(--red);
+    font-style: normal;
+  }
+  .manifesto-sig {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+  .manifesto-sig span {
+    color: var(--gold);
+  }
+
+  @media (max-width: 700px) {
+    #reimagine { padding: 100px 20px 80px; }
+    .campaign-card {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 40px 0;
+    }
+    .campaign-era { font-size: 2.4rem; }
+    .campaign-headline { font-size: 1.35rem; }
+    .reimagine-manifesto { padding: 48px 0; }
+  }
 </style>
 </head>
 <body>
@@ -716,6 +924,7 @@
     <li><a href="#colour">Colour</a></li>
     <li><a href="#packaging">Packaging</a></li>
     <li><a href="#psychology">Psychology</a></li>
+    <li><a href="#reimagine">Reimagine</a></li>
   </ul>
   <div class="nav-tag">Mantra Challenge 2026</div>
 </nav>
@@ -733,7 +942,7 @@
   </p>
   <div class="hero-meta">
     <div class="hero-meta-item"><div class="num">140</div><div class="lbl">Years of History</div></div>
-    <div class="hero-meta-item"><div class="num">4</div><div class="lbl">Chapters</div></div>
+    <div class="hero-meta-item"><div class="num">5</div><div class="lbl">Chapters</div></div>
     <div class="hero-meta-item"><div class="num">200+</div><div class="lbl">Countries Reached</div></div>
     <div class="hero-meta-item"><div class="num">1886</div><div class="lbl">The Beginning</div></div>
   </div>
@@ -1215,6 +1424,247 @@
   </div>
 </section>
 
+<!-- ====== CHAPTER 05 — REIMAGINE ====== -->
+<section id="reimagine">
+  <div class="page-num">05</div>
+
+  <div class="reimagine-intro reveal">
+    <span class="ri-eyebrow">Chapter 05 · Creative Reimagining</span>
+    <h2>Through Our<br><em>Eyes</em></h2>
+    <p>
+      What happens when a 140-year-old brand meets the restless imagination of a management student in Lucknow? 
+      This chapter is not a case study. It is a conversation — between Coca-Cola's most iconic campaigns 
+      and the cultural, social, and emotional landscape of India, as seen from the campus of IIM Lucknow.
+    </p>
+    <p class="ri-context">IIM Lucknow · The Coca-Cola Mantra Challenge 2026 · Personal creative reimagining</p>
+  </div>
+
+  <div class="campaign-list">
+
+    <!-- Campaign 01 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">1971</span>
+        <span class="campaign-tag">Original Campaign</span>
+        <span class="campaign-original">"I'd Like to Buy the World a Coke" — Hilltop TV ad, USA</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">I'd Like to Buy the Chowk a Coke</h3>
+        <span class="campaign-subline">What if harmony didn't need a hilltop — just a crossroads?</span>
+        <p class="campaign-story">
+          The original Hilltop ad placed young people from different nations on an Italian hillside, unified by a bottle of Coke. 
+          It was a beautiful, earnest vision of peace — and it worked because the world was watching television and yearning 
+          for something simple to believe in.
+        </p>
+        <p class="campaign-story">
+          My reimagining sets this at a <strong>Lucknow chowk</strong> — not a manicured hilltop, but the chaotic, 
+          breathing intersection of old and new India. A chai-wali aunty, a deliveryman balancing a stack of tiffins, 
+          two IIM students arguing over placement strategy, a cycle rickshaw driver cooling off in the afternoon sun, 
+          a group of school children on their way home — all of them pausing, mid-rush, to share a bottle.
+        </p>
+        <p class="campaign-story">
+          The original's genius was that it made diversity <em>visible</em>. But in India, diversity is not a statement — 
+          it is just Tuesday. The reimagined version wouldn't have to perform multiculturalism; it would simply <strong>document the ordinary magic</strong> 
+          of how an Indian street corner already works. No one is performing togetherness. They are just there, thirsty, 
+          in the same sun.
+        </p>
+        <div class="campaign-insight">
+          "The hilltop needed staging. The chowk doesn't. Every intersection in this country is already that ad — 
+          it just hasn't been noticed yet."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">Lucknow Street Culture</span>
+          <span class="campaign-el">Ordinary Unity</span>
+          <span class="campaign-el">No Staging Required</span>
+          <span class="campaign-el">Documentary Tone</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campaign 02 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">1993</span>
+        <span class="campaign-tag">Original Campaign</span>
+        <span class="campaign-original">"Always Coca-Cola" — Global brand identity refresh</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">Always Coca-Cola, Always Exam Season</h3>
+        <span class="campaign-subline">Because some things never change — especially the deadlines.</span>
+        <p class="campaign-story">
+          "Always Coca-Cola" was built around the idea of Coke as a constant companion — present at every moment of joy, 
+          spontaneity, and youthful energy. The campaign's signature polar bears, bright sunsets, and carefree teenagers 
+          encoded the brand as a symbol of uncomplicated pleasure.
+        </p>
+        <p class="campaign-story">
+          At IIM Lucknow, the "always" moments look a little different. Always during the <strong>3 AM case study sprint</strong>. 
+          Always when the mess is closed and someone runs to the shop outside the gate. Always when a placement presentation 
+          collapses and the group sits in silence before someone cracks a joke. Always on the last day before summer internship, 
+          when the campus empties and you walk to the canteen alone.
+        </p>
+        <p class="campaign-story">
+          The reimagined campaign would swap polar bears for <strong>Section B study groups</strong>. 
+          Instead of carefree teenagers on a beach, it would show the specific exhausted joy of people who have 
+          worked very hard for something they care very much about — and are taking exactly thirty seconds to breathe 
+          before they go back to it. Coke in that context is not a reward. It is a punctuation mark.
+        </p>
+        <div class="campaign-insight">
+          "Joy doesn't always look like a beach. Sometimes it looks like a cold bottle under a fluorescent light 
+          at 4 AM, with three case submissions still open on the screen."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">IIM Lucknow Campus</span>
+          <span class="campaign-el">Student Exhaustion & Joy</span>
+          <span class="campaign-el">Honest Pleasure</span>
+          <span class="campaign-el">Punctuation, Not Reward</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campaign 03 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">2009</span>
+        <span class="campaign-tag">Original Campaign</span>
+        <span class="campaign-original">"Open Happiness" — Global platform shift</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">Open Khushi</h3>
+        <span class="campaign-subline">Happiness in India doesn't need permission — it needs occasion.</span>
+        <p class="campaign-story">
+          "Open Happiness" was Coca-Cola's most philosophically ambitious campaign — an argument that the act of opening 
+          a Coke was itself a portal to joy. The campaign ran globally and tried to universalise happiness as something 
+          accessible, democratic, and lightweight.
+        </p>
+        <p class="campaign-story">
+          In India, happiness is rarely lightweight. It is <strong>loud, collective, and specific</strong>. 
+          It tastes like a mother insisting you eat more. It sounds like the entire neighbourhood watching a cricket match 
+          on one television. It is the first salary — spent mostly on family. It is a chai handed to a stranger during a power cut.
+        </p>
+        <p class="campaign-story">
+          "Open Khushi" would not be about the individual moment of opening a bottle. It would be about the 
+          <strong>invitation</strong> inside that gesture — the way an Indian person doesn't say "I bought Coke," 
+          they say "I got Coke for everyone." The reimagined campaign leans into collectivity: not one person opening 
+          happiness, but one gesture that immediately multiplies. A Coke bought for one becomes a Coke passed around five. 
+          In a Lucknow hostel room. In a train compartment. At a family gathering where no one agreed to meet but everyone came.
+        </p>
+        <div class="campaign-insight">
+          "In the West, happiness opens inward. In India, it opens outward — it always has somewhere to go."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">Collective Joy</span>
+          <span class="campaign-el">Indian Hospitality</span>
+          <span class="campaign-el">The Shared Bottle</span>
+          <span class="campaign-el">Invitation as Joy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campaign 04 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">2014</span>
+        <span class="campaign-tag">Original Campaign</span>
+        <span class="campaign-original">"Share a Coke" — Personalised label campaign, Australia → Global</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">Share a Coke with Dost, Yaar, Machi</h3>
+        <span class="campaign-subline">A name on a bottle. A language on a friendship.</span>
+        <p class="campaign-story">
+          "Share a Coke" was a masterstroke of mass personalisation — replacing the iconic logo with individual names 
+          to create millions of private moments inside a global campaign. The campaign worked because it made a 
+          mass-produced object feel like it was made for you specifically.
+        </p>
+        <p class="campaign-story">
+          India's version ran with popular names, and it worked. But the reimagining goes deeper: 
+          what if instead of individual names, the labels carried the <strong>words we use for the people we love</strong>? 
+          Not "Rahul" or "Priya" — but <em>Yaar</em>. <em>Machi</em>. <em>Bhai</em>. <em>Di</em>. <em>Chacha</em>. 
+          <em>Dost</em>. The untranslatable words that encode entire relationships in a single sound.
+        </p>
+        <p class="campaign-story">
+          At IIM Lucknow, you learn quickly that your batch is your family. The person you argue with in Operations class 
+          is the same person who stays up with you before finals. <strong>Yaar</strong> doesn't translate to "friend" — 
+          it translates to "the person who knows." A Coke that says <em>Yaar</em> on the label is not just personalised. 
+          It is precise.
+        </p>
+        <div class="campaign-insight">
+          "English has 'friend.' Hindi has yaar, dost, bhai, machi, jaan — each one a different kind of love. 
+          The reimagined label campaign would be a dictionary of closeness."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">Regional Language Labels</span>
+          <span class="campaign-el">Relationship Words</span>
+          <span class="campaign-el">IIM Batch Culture</span>
+          <span class="campaign-el">Untranslatability as Insight</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Campaign 05 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">2021</span>
+        <span class="campaign-tag">Original Campaign</span>
+        <span class="campaign-original">"Real Magic" — Global philosophy, Pixel art & diversity</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">Real Magic: The IIM Lucknow Edition</h3>
+        <span class="campaign-subline">Where Nawabi tehzeeb meets a Bloomberg terminal at 2 AM.</span>
+        <p class="campaign-story">
+          "Real Magic" was Coca-Cola's most recent global repositioning — a platform that argued for the magic that 
+          emerges when human beings, in all their contradictions and differences, actually encounter one another. 
+          The campaign leaned into digital culture, used pixel art aesthetics, and tried to find wonder in 
+          the ordinary friction of modern life.
+        </p>
+        <p class="campaign-story">
+          IIM Lucknow sits in one of the most historically layered cities in the world — a city that was the seat of 
+          Nawabi culture, that perfected <em>tehzeeb</em> (the art of refined courtesy) as a social practice, 
+          and that now hosts one of India's most competitive business schools. The <strong>collision is real</strong> 
+          and it is magical: students who debate Porter's Five Forces in the morning walk past 
+          monuments to Mughal architecture in the evening. The campus itself is neo-Gothic, designed in a tradition 
+          borrowed from Oxford, sitting on North Indian soil.
+        </p>
+        <p class="campaign-story">
+          The reimagined "Real Magic" for IIM Lucknow would document this collision — not as irony, but as 
+          <strong>honest abundance</strong>. A student from Chennai learning Urdu courtesy norms from a Lucknowi batchmate. 
+          A case competition team pulling an all-nighter in a room where the architecture looks like Hogwarts 
+          and the content looks like McKinsey. A Coke shared between someone who came here with nothing 
+          and someone who came here with everything, and the way neither of those facts matters anymore by Week 3.
+        </p>
+        <div class="campaign-insight">
+          "Real Magic isn't manufactured. It's what happens when the most different possible people end up in the same room, 
+          trying for the same thing, for two years. Lucknow has been doing this for centuries. 
+          IIM just does it with case studies."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">Nawabi Lucknow</span>
+          <span class="campaign-el">Campus as Collision</span>
+          <span class="campaign-el">Cultural Abundance</span>
+          <span class="campaign-el">Neo-Gothic Meets B-School</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Manifesto -->
+  <div class="reimagine-manifesto reveal">
+    <span class="manifesto-label">A Note on Reimagining</span>
+    <p class="manifesto-text">
+      Coca-Cola's greatest campaigns were never really about the drink. 
+      They were about the <em>moment before</em> and the <em>person beside you</em>. 
+      That logic doesn't change across cultures — it deepens. 
+      Every city, every campus, every chowk has its own version of that magic waiting to be noticed.
+    </p>
+    <p class="manifesto-text">
+      This is my attempt to <em>notice it</em>.
+    </p>
+    <div class="manifesto-sig">
+      Harish · <span>IIM Lucknow</span> · Mantra Challenge 2026
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Coca‑Cola</div>
@@ -1265,7 +1715,7 @@
   }
 
   // Scroll reveal
-  const revealEls = document.querySelectorAll('.reveal, .timeline-item');
+  const revealEls = document.querySelectorAll('.reveal, .timeline-item, .campaign-card');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
