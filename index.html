@@ -897,6 +897,46 @@
     color: var(--gold);
   }
 
+  /* Part headers inside reimagine */
+  .reimagine-part-header {
+    max-width: 960px;
+    margin: 0 auto 48px;
+    display: grid;
+    grid-template-columns: 1px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0 28px;
+    align-items: start;
+  }
+  .rph-rule {
+    grid-row: 1 / 4;
+    background: var(--red);
+    width: 2px;
+    height: 100%;
+    min-height: 80px;
+  }
+  .rph-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .rph-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 0.95;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .rph-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.5);
+  }
+
   @media (max-width: 700px) {
     #reimagine { padding: 100px 20px 80px; }
     .campaign-card {
@@ -1429,14 +1469,24 @@
   <div class="page-num">05</div>
 
   <div class="reimagine-intro reveal">
-    <span class="ri-eyebrow">Chapter 05 · Creative Reimagining</span>
-    <h2>Through Our<br><em>Eyes</em></h2>
+    <span class="ri-eyebrow">Chapter 05 · Past, Present & Future</span>
+    <h2>Coke Through<br><em>Time</em></h2>
     <p>
-      What happens when a 140-year-old brand meets the restless imagination of a management student in Lucknow? 
-      This chapter is not a case study. It is a conversation — between Coca-Cola's most iconic campaigns 
-      and the cultural, social, and emotional landscape of India, as seen from the campus of IIM Lucknow.
+      A brand that has lasted 140 years has already proved it can survive the past.
+      The real question is whether it can shape what comes next.
+      This chapter does two things: it looks back at Coca-Cola's most iconic campaigns and reimagines them
+      through an Indian lens — rooted in the culture and energy of IIM Lucknow — and then it looks forward,
+      asking what campaigns Coke <em>should</em> run as the world changes around it.
     </p>
-    <p class="ri-context">IIM Lucknow · The Coca-Cola Mantra Challenge 2026 · Personal creative reimagining</p>
+    <p class="ri-context">IIM Lucknow · The Coca-Cola Mantra Challenge 2026 · Creative reimagining & future strategy</p>
+  </div>
+
+  <!-- ── PART A: PAST ── -->
+  <div class="reimagine-part-header reveal">
+    <div class="rph-rule"></div>
+    <div class="rph-label">Part A</div>
+    <h3 class="rph-title">Past Campaigns,<br>Reimagined for India</h3>
+    <p class="rph-desc">What Coca-Cola's greatest campaigns could look like if they were conceived not in Atlanta or New York, but somewhere between a Lucknow chowk and an IIM hostel room.</p>
   </div>
 
   <div class="campaign-list">
@@ -1452,76 +1502,28 @@
         <h3 class="campaign-headline">I'd Like to Buy the Chowk a Coke</h3>
         <span class="campaign-subline">What if harmony didn't need a hilltop — just a crossroads?</span>
         <p class="campaign-story">
-          The original Hilltop ad placed young people from different nations on an Italian hillside, unified by a bottle of Coke. 
-          It was a beautiful, earnest vision of peace — and it worked because the world was watching television and yearning 
-          for something simple to believe in.
+          The original Hilltop ad placed young people from different nations on an Italian hillside, unified by a bottle of Coke.
+          It was a beautiful, earnest vision of peace. My reimagining sets this at a <strong>Lucknow chowk</strong> — not a manicured hilltop, but the chaotic,
+          breathing intersection of old and new India. A chai-wali aunty, a deliveryman balancing tiffins,
+          two IIM students arguing over placement strategy, a cycle rickshaw driver cooling off in the afternoon sun —
+          all pausing, mid-rush, to share a bottle.
         </p>
         <p class="campaign-story">
-          My reimagining sets this at a <strong>Lucknow chowk</strong> — not a manicured hilltop, but the chaotic, 
-          breathing intersection of old and new India. A chai-wali aunty, a deliveryman balancing a stack of tiffins, 
-          two IIM students arguing over placement strategy, a cycle rickshaw driver cooling off in the afternoon sun, 
-          a group of school children on their way home — all of them pausing, mid-rush, to share a bottle.
-        </p>
-        <p class="campaign-story">
-          The original's genius was that it made diversity <em>visible</em>. But in India, diversity is not a statement — 
-          it is just Tuesday. The reimagined version wouldn't have to perform multiculturalism; it would simply <strong>document the ordinary magic</strong> 
-          of how an Indian street corner already works. No one is performing togetherness. They are just there, thirsty, 
-          in the same sun.
+          In India, diversity is not a statement — it is just Tuesday. The reimagined version wouldn't perform multiculturalism;
+          it would simply <strong>document the ordinary magic</strong> of how an Indian street corner already works.
         </p>
         <div class="campaign-insight">
-          "The hilltop needed staging. The chowk doesn't. Every intersection in this country is already that ad — 
-          it just hasn't been noticed yet."
+          "The hilltop needed staging. The chowk doesn't. Every intersection in this country is already that ad — it just hasn't been noticed yet."
         </div>
         <div class="campaign-elements">
           <span class="campaign-el">Lucknow Street Culture</span>
           <span class="campaign-el">Ordinary Unity</span>
-          <span class="campaign-el">No Staging Required</span>
           <span class="campaign-el">Documentary Tone</span>
         </div>
       </div>
     </div>
 
     <!-- Campaign 02 -->
-    <div class="campaign-card reveal">
-      <div class="campaign-meta">
-        <span class="campaign-era">1993</span>
-        <span class="campaign-tag">Original Campaign</span>
-        <span class="campaign-original">"Always Coca-Cola" — Global brand identity refresh</span>
-      </div>
-      <div class="campaign-body">
-        <h3 class="campaign-headline">Always Coca-Cola, Always Exam Season</h3>
-        <span class="campaign-subline">Because some things never change — especially the deadlines.</span>
-        <p class="campaign-story">
-          "Always Coca-Cola" was built around the idea of Coke as a constant companion — present at every moment of joy, 
-          spontaneity, and youthful energy. The campaign's signature polar bears, bright sunsets, and carefree teenagers 
-          encoded the brand as a symbol of uncomplicated pleasure.
-        </p>
-        <p class="campaign-story">
-          At IIM Lucknow, the "always" moments look a little different. Always during the <strong>3 AM case study sprint</strong>. 
-          Always when the mess is closed and someone runs to the shop outside the gate. Always when a placement presentation 
-          collapses and the group sits in silence before someone cracks a joke. Always on the last day before summer internship, 
-          when the campus empties and you walk to the canteen alone.
-        </p>
-        <p class="campaign-story">
-          The reimagined campaign would swap polar bears for <strong>Section B study groups</strong>. 
-          Instead of carefree teenagers on a beach, it would show the specific exhausted joy of people who have 
-          worked very hard for something they care very much about — and are taking exactly thirty seconds to breathe 
-          before they go back to it. Coke in that context is not a reward. It is a punctuation mark.
-        </p>
-        <div class="campaign-insight">
-          "Joy doesn't always look like a beach. Sometimes it looks like a cold bottle under a fluorescent light 
-          at 4 AM, with three case submissions still open on the screen."
-        </div>
-        <div class="campaign-elements">
-          <span class="campaign-el">IIM Lucknow Campus</span>
-          <span class="campaign-el">Student Exhaustion & Joy</span>
-          <span class="campaign-el">Honest Pleasure</span>
-          <span class="campaign-el">Punctuation, Not Reward</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Campaign 03 -->
     <div class="campaign-card reveal">
       <div class="campaign-meta">
         <span class="campaign-era">2009</span>
@@ -1532,21 +1534,14 @@
         <h3 class="campaign-headline">Open Khushi</h3>
         <span class="campaign-subline">Happiness in India doesn't need permission — it needs occasion.</span>
         <p class="campaign-story">
-          "Open Happiness" was Coca-Cola's most philosophically ambitious campaign — an argument that the act of opening 
-          a Coke was itself a portal to joy. The campaign ran globally and tried to universalise happiness as something 
-          accessible, democratic, and lightweight.
+          "Open Happiness" argued that the act of opening a Coke was itself a portal to joy.
+          But in India, happiness is rarely a solo act. It is <strong>loud, collective, and specific</strong> —
+          it tastes like a mother insisting you eat more, sounds like an entire neighbourhood on one television during a match,
+          feels like a Coke bought for one that immediately becomes a Coke for everyone in the room.
         </p>
         <p class="campaign-story">
-          In India, happiness is rarely lightweight. It is <strong>loud, collective, and specific</strong>. 
-          It tastes like a mother insisting you eat more. It sounds like the entire neighbourhood watching a cricket match 
-          on one television. It is the first salary — spent mostly on family. It is a chai handed to a stranger during a power cut.
-        </p>
-        <p class="campaign-story">
-          "Open Khushi" would not be about the individual moment of opening a bottle. It would be about the 
-          <strong>invitation</strong> inside that gesture — the way an Indian person doesn't say "I bought Coke," 
-          they say "I got Coke for everyone." The reimagined campaign leans into collectivity: not one person opening 
-          happiness, but one gesture that immediately multiplies. A Coke bought for one becomes a Coke passed around five. 
-          In a Lucknow hostel room. In a train compartment. At a family gathering where no one agreed to meet but everyone came.
+          "Open Khushi" leans into that collectivity. In a Lucknow hostel room. On a train. At a family gathering
+          where no one agreed to meet but everyone came. The bottle opens outward, not inward.
         </p>
         <div class="campaign-insight">
           "In the West, happiness opens inward. In India, it opens outward — it always has somewhere to go."
@@ -1554,13 +1549,12 @@
         <div class="campaign-elements">
           <span class="campaign-el">Collective Joy</span>
           <span class="campaign-el">Indian Hospitality</span>
-          <span class="campaign-el">The Shared Bottle</span>
           <span class="campaign-el">Invitation as Joy</span>
         </div>
       </div>
     </div>
 
-    <!-- Campaign 04 -->
+    <!-- Campaign 03 -->
     <div class="campaign-card reveal">
       <div class="campaign-meta">
         <span class="campaign-era">2014</span>
@@ -1568,31 +1562,23 @@
         <span class="campaign-original">"Share a Coke" — Personalised label campaign, Australia → Global</span>
       </div>
       <div class="campaign-body">
-        <h3 class="campaign-headline">Share a Coke with Dost, Yaar, Machi</h3>
+        <h3 class="campaign-headline">Share a Coke with Yaar, Machi, Dost</h3>
         <span class="campaign-subline">A name on a bottle. A language on a friendship.</span>
         <p class="campaign-story">
-          "Share a Coke" was a masterstroke of mass personalisation — replacing the iconic logo with individual names 
-          to create millions of private moments inside a global campaign. The campaign worked because it made a 
-          mass-produced object feel like it was made for you specifically.
+          "Share a Coke" replaced the logo with individual names to make a mass-produced object feel personal.
+          The Indian reimagining goes deeper: what if instead of names, the labels carried the
+          <strong>words we use for the people we love</strong>?
+          Not "Rahul" — but <em>Yaar</em>. <em>Machi</em>. <em>Bhai</em>. <em>Di</em>. <em>Dost</em>.
+          The untranslatable words that encode entire relationships in a single sound.
         </p>
         <p class="campaign-story">
-          India's version ran with popular names, and it worked. But the reimagining goes deeper: 
-          what if instead of individual names, the labels carried the <strong>words we use for the people we love</strong>? 
-          Not "Rahul" or "Priya" — but <em>Yaar</em>. <em>Machi</em>. <em>Bhai</em>. <em>Di</em>. <em>Chacha</em>. 
-          <em>Dost</em>. The untranslatable words that encode entire relationships in a single sound.
-        </p>
-        <p class="campaign-story">
-          At IIM Lucknow, you learn quickly that your batch is your family. The person you argue with in Operations class 
-          is the same person who stays up with you before finals. <strong>Yaar</strong> doesn't translate to "friend" — 
-          it translates to "the person who knows." A Coke that says <em>Yaar</em> on the label is not just personalised. 
-          It is precise.
+          At IIM Lucknow, your batch is your family. <strong>Yaar</strong> doesn't translate to "friend" —
+          it translates to "the person who knows." A Coke that says <em>Yaar</em> on the label is not just personalised. It is precise.
         </p>
         <div class="campaign-insight">
-          "English has 'friend.' Hindi has yaar, dost, bhai, machi, jaan — each one a different kind of love. 
-          The reimagined label campaign would be a dictionary of closeness."
+          "English has 'friend.' Hindi has yaar, dost, bhai, machi, jaan — each one a different kind of love. The reimagined label campaign would be a dictionary of closeness."
         </div>
         <div class="campaign-elements">
-          <span class="campaign-el">Regional Language Labels</span>
           <span class="campaign-el">Relationship Words</span>
           <span class="campaign-el">IIM Batch Culture</span>
           <span class="campaign-el">Untranslatability as Insight</span>
@@ -1600,47 +1586,174 @@
       </div>
     </div>
 
-    <!-- Campaign 05 -->
+  </div>
+
+  <!-- ── PART B: FUTURE ── -->
+  <div class="reimagine-part-header reveal" style="margin-top: 80px;">
+    <div class="rph-rule"></div>
+    <div class="rph-label">Part B</div>
+    <h3 class="rph-title">Future Campaigns<br>Coke Should Run</h3>
+    <p class="rph-desc">The world is shifting — in how it consumes, connects, and finds meaning. These are the campaigns Coca-Cola should be building right now, rooted in emerging trends and the specific pulse of India in 2026.</p>
+  </div>
+
+  <div class="campaign-list">
+
+    <!-- Future 01 -->
     <div class="campaign-card reveal">
       <div class="campaign-meta">
-        <span class="campaign-era">2021</span>
-        <span class="campaign-tag">Original Campaign</span>
-        <span class="campaign-original">"Real Magic" — Global philosophy, Pixel art & diversity</span>
+        <span class="campaign-era">2026</span>
+        <span class="campaign-tag">Future Campaign Concept</span>
+        <span class="campaign-original">Trend: The Loneliness Epidemic & Real-World Connection</span>
       </div>
       <div class="campaign-body">
-        <h3 class="campaign-headline">Real Magic: The IIM Lucknow Edition</h3>
-        <span class="campaign-subline">Where Nawabi tehzeeb meets a Bloomberg terminal at 2 AM.</span>
+        <h3 class="campaign-headline">Put the Phone Down. Pick a Coke Up.</h3>
+        <span class="campaign-subline">The most radical thing a brand can do in 2026 is ask you to be present.</span>
         <p class="campaign-story">
-          "Real Magic" was Coca-Cola's most recent global repositioning — a platform that argued for the magic that 
-          emerges when human beings, in all their contradictions and differences, actually encounter one another. 
-          The campaign leaned into digital culture, used pixel art aesthetics, and tried to find wonder in 
-          the ordinary friction of modern life.
+          Global surveys consistently flag loneliness as a defining crisis of this generation — not the loneliness of isolation,
+          but the loneliness of being in a room full of people while everyone stares at a screen.
+          India's Gen Z is caught in this exactly: hyper-connected online, increasingly disconnected in person.
         </p>
         <p class="campaign-story">
-          IIM Lucknow sits in one of the most historically layered cities in the world — a city that was the seat of 
-          Nawabi culture, that perfected <em>tehzeeb</em> (the art of refined courtesy) as a social practice, 
-          and that now hosts one of India's most competitive business schools. The <strong>collision is real</strong> 
-          and it is magical: students who debate Porter's Five Forces in the morning walk past 
-          monuments to Mughal architecture in the evening. The campus itself is neo-Gothic, designed in a tradition 
-          borrowed from Oxford, sitting on North Indian soil.
+          The campaign is simple in execution but radical in message: <strong>every Coke vending machine, bottle, and point-of-sale
+          becomes a prompt to look up</strong>. The campaign shows real moments — a college canteen where two strangers
+          both reach for the last Coke and end up in a three-hour conversation. A family dinner where someone
+          puts the phone face-down for the first time. A train journey where earphones come out.
+          The tagline: <em>"Some things are better offline."</em>
         </p>
         <p class="campaign-story">
-          The reimagined "Real Magic" for IIM Lucknow would document this collision — not as irony, but as 
-          <strong>honest abundance</strong>. A student from Chennai learning Urdu courtesy norms from a Lucknowi batchmate. 
-          A case competition team pulling an all-nighter in a room where the architecture looks like Hogwarts 
-          and the content looks like McKinsey. A Coke shared between someone who came here with nothing 
-          and someone who came here with everything, and the way neither of those facts matters anymore by Week 3.
+          For IIM Lucknow specifically, this lands hard. The campus has everything — the people, the energy,
+          the late-night corridors — but the competition pressure pushes students inward.
+          A Coke campaign that gave permission to <strong>just be with someone</strong> would not feel like advertising.
+          It would feel like relief.
         </p>
         <div class="campaign-insight">
-          "Real Magic isn't manufactured. It's what happens when the most different possible people end up in the same room, 
-          trying for the same thing, for two years. Lucknow has been doing this for centuries. 
-          IIM just does it with case studies."
+          "In a world drowning in content, the most powerful thing Coke can sell is an excuse to be somewhere fully."
         </div>
         <div class="campaign-elements">
-          <span class="campaign-el">Nawabi Lucknow</span>
-          <span class="campaign-el">Campus as Collision</span>
-          <span class="campaign-el">Cultural Abundance</span>
-          <span class="campaign-el">Neo-Gothic Meets B-School</span>
+          <span class="campaign-el">Gen Z Loneliness Trend</span>
+          <span class="campaign-el">Digital Detox Culture</span>
+          <span class="campaign-el">IIM Pressure & Connection</span>
+          <span class="campaign-el">Anti-Screen Positioning</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future 02 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">2027</span>
+        <span class="campaign-tag">Future Campaign Concept</span>
+        <span class="campaign-original">Trend: India's Tier 2 & Tier 3 City Boom</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">Coke Wahan Bhi</h3>
+        <span class="campaign-subline">The next India isn't in Mumbai. It's in Meerut, Madurai, and Manipur.</span>
+        <p class="campaign-story">
+          India's economic centre of gravity is shifting. Tier 2 and Tier 3 cities are driving consumption growth,
+          producing startup founders, and creating cultural moments that metropolitan India is only catching up to.
+          The next generation of ambitious Indians isn't dreaming of moving to a metro — they're building where they are.
+        </p>
+        <p class="campaign-story">
+          Coca-Cola has always presented itself as the drink that belongs everywhere.
+          <em>Coke Wahan Bhi</em> ("Coke, There Too") takes that promise seriously for the first time —
+          not as a distribution boast, but as a <strong>cultural acknowledgement</strong>.
+          The campaign tells stories from Coimbatore's startup garages, Lucknow's gully cricket finals,
+          Bhubaneswar's first-generation college students celebrating results.
+          Not as exotic reportage, but as the obvious, central story of modern India.
+        </p>
+        <p class="campaign-story">
+          The brand insight: Coke has been present in these cities for decades.
+          What it hasn't done is <strong>look at them</strong>. This campaign changes that gaze —
+          from the brand looking outward to these communities, to these communities seeing themselves in the brand.
+        </p>
+        <div class="campaign-insight">
+          "The most underrepresented market in Indian advertising is the market that is actually buying the product."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">Tier 2 & 3 City Rise</span>
+          <span class="campaign-el">Aspirational India</span>
+          <span class="campaign-el">Representation Deficit</span>
+          <span class="campaign-el">Cultural Acknowledgement</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future 03 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">2028</span>
+        <span class="campaign-tag">Future Campaign Concept</span>
+        <span class="campaign-original">Trend: Sustainability Anxiety & Brand Accountability</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">The Bottle That Comes Back</h3>
+        <span class="campaign-subline">What if Coke's most iconic design element became its most powerful environmental statement?</span>
+        <p class="campaign-story">
+          Gen Z consumers — especially educated urban Indians — are increasingly unwilling to separate the brands
+          they love from the environmental footprints those brands leave behind.
+          Plastic waste from beverage companies is one of the most visible environmental issues in India,
+          and Coca-Cola, as a category leader, cannot afford to sit this out.
+        </p>
+        <p class="campaign-story">
+          This campaign doesn't hide from the issue. It <strong>centres the contour bottle</strong> —
+          Coke's most iconic piece of design — as a symbol of circular economy. The campaign tells the story
+          of the bottle's journey: made, filled, shared, returned, remade. Not as a CSR footnote,
+          but as a full brand narrative. The contour bottle, so recognisable it can be identified by touch,
+          now carries a new layer of meaning: <em>it was designed to last, and it should.</em>
+        </p>
+        <p class="campaign-story">
+          At IIM Lucknow and campuses like it, where future business leaders are being formed,
+          this campaign would land as something rare: a brand being <strong>honest about tension</strong>
+          and choosing to act rather than deflect. That honesty, in 2028, will be more valuable than any tagline.
+        </p>
+        <div class="campaign-insight">
+          "The contour bottle survived 100 years because it was beautifully designed. The next 100 years require it to be responsibly returned."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">Sustainability Trend</span>
+          <span class="campaign-el">Circular Economy Narrative</span>
+          <span class="campaign-el">Gen Z Brand Accountability</span>
+          <span class="campaign-el">Iconic Design Reframed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future 04 -->
+    <div class="campaign-card reveal">
+      <div class="campaign-meta">
+        <span class="campaign-era">2029</span>
+        <span class="campaign-tag">Future Campaign Concept</span>
+        <span class="campaign-original">Trend: AI, Hyperpersonalisation & the Search for the Human</span>
+      </div>
+      <div class="campaign-body">
+        <h3 class="campaign-headline">Made by No One. Meant for Everyone.</h3>
+        <span class="campaign-subline">As AI generates everything, the things made by humans become the most valuable things on earth.</span>
+        <p class="campaign-story">
+          By the late 2020s, AI will generate most of the content people consume — music, art, writing, advertising.
+          This creates a paradox: the more content there is, the more people will hunger for something
+          that feels <em>genuinely human</em>. Imperfect. Specific. Made with hands and memory and feeling.
+        </p>
+        <p class="campaign-story">
+          Coca-Cola's 140-year-old Spencerian script — <strong>handwritten by a human in 1887</strong> —
+          becomes, in this context, one of the most radical design choices in modern branding.
+          Not because it looks vintage, but because it is categorically, provably, unmistakably <em>not AI</em>.
+          The campaign's thesis: in a world where everything can be generated, the things that were made by a person,
+          at a specific moment in time, carry a new kind of weight.
+        </p>
+        <p class="campaign-story">
+          The execution: a campaign built entirely from <strong>user-generated, handmade, imperfect content</strong> —
+          handwritten notes, hand-drawn Coke bottles, voice messages, badly-lit phone videos.
+          Nothing polished. Nothing generated. The tagline flips the brand's legacy into a future claim:
+          <em>"Still human. Still Coke."</em>
+        </p>
+        <div class="campaign-insight">
+          "In 1887, Frank Robinson wrote the logo by hand. In 2029, that handwriting is the most powerful thing about the brand — because nothing artificial can replicate it."
+        </div>
+        <div class="campaign-elements">
+          <span class="campaign-el">AI Anxiety & Humanism</span>
+          <span class="campaign-el">UGC as Authenticity</span>
+          <span class="campaign-el">Spencerian Script Legacy</span>
+          <span class="campaign-el">Still Human. Still Coke.</span>
         </div>
       </div>
     </div>
@@ -1649,15 +1762,16 @@
 
   <!-- Manifesto -->
   <div class="reimagine-manifesto reveal">
-    <span class="manifesto-label">A Note on Reimagining</span>
+    <span class="manifesto-label">Looking Back. Looking Forward.</span>
     <p class="manifesto-text">
-      Coca-Cola's greatest campaigns were never really about the drink. 
-      They were about the <em>moment before</em> and the <em>person beside you</em>. 
-      That logic doesn't change across cultures — it deepens. 
-      Every city, every campus, every chowk has its own version of that magic waiting to be noticed.
+      The campaigns that made Coca-Cola legendary were not predictions — they were observations.
+      Someone noticed what people were feeling and gave it a bottle to hold.
+      The future campaigns that will define the brand will work the same way:
+      they will find the <em>feeling that has no name yet</em> and give it one.
     </p>
     <p class="manifesto-text">
-      This is my attempt to <em>notice it</em>.
+      From a Lucknow chowk to a 2029 campus — <em>Coke was always already there</em>.
+      The only question is whether the brand notices.
     </p>
     <div class="manifesto-sig">
       Harish · <span>IIM Lucknow</span> · Mantra Challenge 2026
